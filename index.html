@@ -1,88 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
     <style>
+      body {
+        margin: 20px auto;
+        width: 60vw;
+        height: 60vh;
+      }
 
-    body {
-    margin: 20px auto;
-    width: 60vw;
-    height: 60vh;
-    }
+      .header-div {
+        display: flex;
+        justify-content: space-between;
+      }
 
-    .header-div {
-    display: flex;
-    justify-content: space-between;
- 
-    }
-
-
-    .header-div p {
+      .header-div p {
         font-size: 18px;
         font-weight: 700;
         text-transform: uppercase;
-    }
+      }
 
-    .header-div button {
+      .header-div button {
         font-size: 18px;
         font-weight: 700;
         text-transform: uppercase;
-    }
+      }
 
-    header h1 {
-text-align: center;
-    }
+      header h1 {
+        text-align: center;
+      }
 
-    header div {
-text-align: center;
-font-size: 30px;
-    }
+      header div {
+        text-align: center;
+        font-size: 30px;
+      }
 
-main {
-    display: flex;
-    justify-content: space-between;
-}
+      main {
+        display: flex;
+        justify-content: space-between;
+      }
 
-    section {
+      section {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-    }
-
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <header>
-        <div class="header-div">
-            <button>Zagraj ponownie</button>
-            <p>Wpisz liczbę między 1 - 20</p>       
-        </div>
-        <h1>Odgadnij liczbę</h1>
-        <div class="number">?</div>
+      <div class="header-div">
+        <button>Zagraj ponownie</button>
+        <p>Wpisz liczbę między 1 - 20</p>
+      </div>
+      <h1>Odgadnij liczbę</h1>
+      <div class="number">?</div>
     </header>
 
     <main>
-        <section class="left">
-            <input type="number" class="quess">
-            <button class="btn-check">Check!</button>
-        </section>
-        <section class="right">
-       <p class="message">Zacznij zgadywać...</p>
-       <p class="label-score">Wynik: <span class="score">20</span></p>
-       <p class="label-highscore">Highscore: <span class="highscore">0
-       </span>
-       </p>
-        </section>
+      <section class="left">
+        <input type="number" class="quess" />
+        <button class="btn-check">Check!</button>
+      </section>
+      <section class="right">
+        <p class="message">Zacznij zgadywać...</p>
+        <p class="label-score">Wynik: <span class="score">20</span></p>
+        <p class="label-highscore">
+          Highscore: <span class="highscore">0 </span>
+        </p>
+      </section>
     </main>
 
     <script src="scrpit.js"></script>
-</body>
-
+  </body>
 </html>
