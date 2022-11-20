@@ -7,31 +7,105 @@
     <title>Document</title>
 
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        outline: 0;
+      }
+
       body {
-        margin: 20px auto;
-        width: 60vw;
-        height: 60vh;
+        font-family: "Poppins", sans-serif;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(
+          -45deg,
+          #3f51b1 0%,
+          #5a55ae 13%,
+          #7b5fac 25%,
+          #8f6aae 38%,
+          #a86aa4 50%,
+          #cc6b8e 62%,
+          #f18271 75%,
+          #f3a469 87%,
+          #f7c978 100%
+        );
+        background-size: 400% 400%;
+        position: relative;
+        animation: animate 15s ease-in-out infinite;
+      }
+
+      @keyframes animate {
+        0% {
+          background-position: 0 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0 50%;
+        }
+      }
+
+      .background {
+        background: linear-gradient(
+          -45deg,
+          #3fb16e 0%,
+          #0d703a 13%,
+          #338f1c 25%,
+          #5ee07a 38%,
+          #5cb383 50%,
+          #6ecc6b 62%,
+          #56f85e 75%,
+          #69f380 87%,
+          #10704b 100%
+        );
+        background-size: 400% 400%;
+        position: relative;
+        animation: animate 15s ease-in-out infinite;
+      }
+
+      @keyframes animate {
+        0% {
+          background-position: 0 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0 50%;
+        }
+      }
+
+      header {
+        width: 70vw;
+        margin: auto;
+        padding: 20px;
       }
 
       .header-div {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
+        margin-bottom: 10vh;
       }
 
       .header-div p {
+        color: #fff;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 20px;
         font-size: 18px;
-        font-weight: 700;
-        text-transform: uppercase;
-      }
-
-      .header-div button {
-        font-size: 18px;
-        font-weight: 700;
-        text-transform: uppercase;
+        border-radius: 10px;
+        width: 20vw;
       }
 
       header h1 {
         text-align: center;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 20px;
+        font-size: 36px;
+        border-radius: 10px;
+        width: 70vw;
+        margin: auto;
       }
 
       header div {
@@ -39,15 +113,75 @@
         font-size: 30px;
       }
 
+      .number {
+        color: #fff;
+        padding: 20px;
+        font-size: 60px;
+        border-radius: 10px;
+      }
+
+      .quess {
+        color: #fff;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 20px;
+        font-size: 18px;
+        border-radius: 10px;
+        text-align: center;
+        border: none;
+      }
+
       main {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
+        width: 70vw;
+        margin: auto;
       }
 
       section {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 20px;
+        font-size: 18px;
+        border-radius: 10px;
+        border: none;
+      }
+
+      .right {
+        text-align: center;
+        width: 20vw;
+      }
+
+      .left {
+        width: 20vw;
+      }
+
+      button {
+        color: #fff;
+        background: rgba(32, 22, 22, 0.479);
+        padding: 20px;
+        font-size: 18px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .reset-button {
+        width: 20vw;
+      }
+
+      @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&display=swap");
+
+      .signature {
+        background: rgba(32, 22, 22, 0.479);
+        font-size: 10px;
+        border-radius: 10px;
+        width: 120px;
+        padding: 5px;
+        text-align: center;
+        margin-top: 10px;
       }
     </style>
   </head>
@@ -55,24 +189,22 @@
   <body>
     <header>
       <div class="header-div">
-        <button>Zagraj ponownie</button>
+        <button class="reset-button">Zagraj ponownie</button>
         <p>Wpisz liczbę między 1 - 20</p>
       </div>
       <h1>Odgadnij liczbę</h1>
-      <div class="number">?</div>
+      <div class="number">❓</div>
     </header>
 
     <main>
       <section class="left">
-        <input type="number" class="quess" />
-        <button class="btn-check">Check!</button>
+        <input type="number" class="quess" placeholder="Wprowadź liczbę" />
+        <button class="btn-check">Sprawdź Wynik</button>
+        <p class="signature">Created by Rafał Skiba</p>
       </section>
       <section class="right">
         <p class="message">Zacznij zgadywać...</p>
-        <p class="label-score">Wynik: <span class="score">20</span></p>
-        <p class="label-highscore">
-          Highscore: <span class="highscore">0 </span>
-        </p>
+        <p class="label-score">Twój wynik: <span class="score">20</span></p>
       </section>
     </main>
 
