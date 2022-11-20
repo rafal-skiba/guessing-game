@@ -9,45 +9,45 @@ const score = document.querySelector(".label-score");
 const againButton = document.querySelector(".reset-button");
 
 
-let result = 20
+let result = 10
+
+const dataMessage = {
+    noInput: "Musisz wpisać liczbę od 1 do 20 ❗",
+    correctNumber: "Gratulacje, podałeś prawidłową liczbę i ukończyłeś grę 🏆",
+    toLowNumber: "Podałeś za małą liczbę, spróbuj ponownie 🚩",
+    toHighNumber: "Podałeś za dużą liczbę, spróbuj ponownie 📈",
+    gameOver: "Niestety przegrałęś",
+    resetMessage: "Zacznij zgadywać"
+}
 
 
 button.addEventListener("click", () => {
     
     if (!input.value) {
-        message.textContent = "Musisz wpisać liczbę od 1 do 20 ❗"
+        message.textContent = dataMessage.noInput;
     } else if (Number(input.value) === randomNumber) {
-        message.textContent = "Gratulacje, podałeś prawidłową liczbę i ukończyłeś grę 🏆";
+        message.textContent = dataMessage.correctNumber;
         body.classList.add("background");
         number.textContent = randomNumber;
-        score.textContent = "Twój wynik: " + result;
-        
-    } else if (Number(input.value) > randomNumber) {
+        score.textContent = "Twój wynik: " + result;       
+    } else if (Number(input.value) !== randomNumber) {
         if (result > 1) {
-            message.textContent = "Podałeś za dużą liczbę, spróbuj ponownie 📈"
+            message.textContent = Number(input.value) > randomNumber ? dataMessage.toHighNumber : dataMessage.toLowNumber;
             result--;
             score.textContent = "Twój wynik: " + result;
-        }  else {
-            message.textContent = "Niestety przegrałęś";
+        } else {
+            message.textContent = dataMessage.gameOver;
             score.textContent = 0;
         }
-    } else if (Number(input.value) < randomNumber) {
-        if (result > 1) {
-            message.textContent = "Podałeś za małą liczbę, spróbuj ponownie 🚩"
-            result--;
-            score.textContent = "Twój wynik: " + result; 
-        }   else {
-            message.textContent = "Niestety przegrałęś";
-            score.textContent = 0;
-        }
-    } 
+    }
 })
 
 againButton.addEventListener("click", () => {
     body.classList.remove("background");
-    score.textContent = 20;
+    result = 10;
+    score.textContent = "Twój wynik: " + result;
     randomNumber = Math.floor(Math.random()*20);
     number.textContent = "❓";
-    message.textContent = "Zacznij zgadywać";
+    message.textContent = dataMessage.resetMessage;
 })
 
